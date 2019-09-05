@@ -1063,10 +1063,194 @@ ll.append(5)
 ll.insertatnth(2,66)
 print(ll.printList())
 
+##################################################################################################################################
+
+#programs:
+
+a=22
+b=33
+c=44
+def maxof(a,b,c):
+    if a >= b and a >= c:
+        largest = a
+    elif b >= a and b >= c:
+        largest = b
+    else:
+        largest = c
+    return largest
+#print maxof(a,b,c) 
+
+l = [3,5,6,2,3,8,9,2,1]
+
+def sub_array_max_sum(l,size):
+    new_sub = []
+    for i in range(0,len(l),size):
+        new_sub.append(l[i:i+size])
+    print (new_sub)
+    print(reduce(lambda x,y: x if sum(x)>sum(y) else y,new_sub))
+
+#sub_array_max_sum(l,3)
+
+s='malayalam'
+
+def pale(s):
+    for i in range(0, len(s)/2):
+        if s[i] != s[len(s)-i-1]:
+            return False
+    return True
+
+#print(pale(s))
+l=[3,6,2,1]
+n=len(l)
+for i in range(0,n):
+    for j in range(0,n-i-1):
+        if l[j] > l[j+1]:
+            l[j],l[j+1] = l[j+1],l[j]
+#print (l)
+
+
+def find_num1(nums,target):
+    total = {}
+    for i in nums:
+        potentialmatch = target-i
+        if potentialmatch in total:
+            return [potentialmatch,i]
+        else:
+            total[i]=True
+    print (total)
+
+num_list=[2,3,6,11,15]
+# print find_num1(num_list,9)
+
+
+# import re
+# p = re.compile(r'\bto\b')
+# with open('uday.txt','r') as f:
+#     lines = f.readlines()
+#     for line in lines:
+#         a =p.findall(line)
+#         with open ('uday1.txt','w')as f:
+#             f.writelines(a)
+
+
+arr =[1, 0, 0, 1, 1, 0, 1]
+
+count = 0
+for i in range(len(arr)):
+    if arr[i] !=0:
+        arr[count] = arr[i]
+        count+=1
+while count < len(arr):
+    arr[count] = 0
+    count +=1
+#print (arr)
+
+#sum of two numbers equal to target number
+l=[1,8,3,4,2,7,6]
+j = len(l)-1
+target = 9
+for i in range(len(l)):
+    if l[i]+l[j] == target:
+        #print(l[i],l[j])
+        j-=1
+
+
+s= 'udaykumar'
+d={}
+for i in s:
+    d[i] = d.get(i,0)+1
+#print (d)
+
+#sum of Triplets
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+target=10
+for i in range(len(arr)-1):
+    left = i+1
+    right = len(arr)-1
+    current = arr[i]
+    while left < right:
+        if current+arr[left]+arr[right] == target:
+            #print(current,arr[left],arr[right])
+            left +=1
+            right -=1
+        elif current+arr[left]+arr[right] < target:
+            left +=1
+        else:
+            right -=1
+
+#print (arr)
+
+
+#number
+
+l = 365
+s = ''
+while l>0:
+    d = l%10
+    s+=str(d)
+    l = l//10
+print (int(s))
+
+
+##############################################################################################################################
+
+
+##############################################################################################################################
+#SOLID PRINCIPLES
+##################
+
+#1) Open&Close Principles
+
+class Animal:
+    def __init__(self, name):
+        self.name = name
+    
+
+animals = [Animal('Lion'),Animal('Mouse')]
+
+"""
+The function animal_sound does not conform to the open-closed principle because
+it cannot be closed against new kinds of animals.  If we add a new animal,
+Snake, We have to modify the animal_sound function.  You see, for every new
+animal, a new logic is added to the animal_sound function.  This is quite a
+simple example. When your application grows and becomes complex, you will see
+that the if statement would be repeated over and over again in the animal_sound
+function each time a new animal is added, all over the application.
+"""
+def animal_sound (animals):
+    for animal in animals:
+        if animal.name == 'Lion':
+            print('Roar')
+        elif animal.name == 'Mouse':
+            print('aqeak')
+#print(animal_sound(animals))
+
+
+class Animals:
+    def __init__(self,name):
+        self.name = name
+
+
+class Lion(Animals):
+
+    def make_sound(self):
+        return self.name +'Make sound is: ' +'Roar'
+class Snake(Animals):
+    def make_sound(self):
+        return self.name +'Make sound is: ' + 'HISSS'
+animals = [Lion('Lion'),Snake('Snake')]
+
+def animal_sound(animals):
+    for animal in animals:
+        #print(animal.make_sound())
+        pass
+#print (animal_sound(animals))
 
 
 
-
+##################################
+#Single Responsibility Principle
+##################################
 
 
 
