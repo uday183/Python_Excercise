@@ -1079,7 +1079,7 @@ def maxof(a,b,c):
         largest = c
     return largest
 #print maxof(a,b,c) 
-
+################################################
 l = [3,5,6,2,3,8,9,2,1]
 
 def sub_array_max_sum(l,size):
@@ -1090,7 +1090,7 @@ def sub_array_max_sum(l,size):
     print(reduce(lambda x,y: x if sum(x)>sum(y) else y,new_sub))
 
 #sub_array_max_sum(l,3)
-
+################################################
 s='malayalam'
 
 def pale(s):
@@ -1098,7 +1098,7 @@ def pale(s):
         if s[i] != s[len(s)-i-1]:
             return False
     return True
-
+################################################
 #print(pale(s))
 l=[3,6,2,1]
 n=len(l)
@@ -1107,7 +1107,7 @@ for i in range(0,n):
         if l[j] > l[j+1]:
             l[j],l[j+1] = l[j+1],l[j]
 #print (l)
-
+################################################
 
 def find_num1(nums,target):
     total = {}
@@ -1132,7 +1132,7 @@ num_list=[2,3,6,11,15]
 #         with open ('uday1.txt','w')as f:
 #             f.writelines(a)
 
-
+################################################
 arr =[1, 0, 0, 1, 1, 0, 1]
 
 count = 0
@@ -1144,7 +1144,7 @@ while count < len(arr):
     arr[count] = 0
     count +=1
 #print (arr)
-
+################################################
 #sum of two numbers equal to target number
 l=[1,8,3,4,2,7,6]
 j = len(l)-1
@@ -1153,14 +1153,14 @@ for i in range(len(l)):
     if l[i]+l[j] == target:
         #print(l[i],l[j])
         j-=1
-
+################################################
 
 s= 'udaykumar'
 d={}
 for i in s:
     d[i] = d.get(i,0)+1
 #print (d)
-
+################################################
 #sum of Triplets
 arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 target=10
@@ -1180,7 +1180,7 @@ for i in range(len(arr)-1):
 
 #print (arr)
 
-
+################################################
 #number
 
 l = 365
@@ -1189,7 +1189,53 @@ while l>0:
     d = l%10
     s+=str(d)
     l = l//10
-print (int(s))
+#print (int(s))
+################################################
+a=[1,1,3,4,5]
+b=[2,3,6,7,8]
+res =[]
+for i in range(len(a)):
+    if res:
+        if res[-1]> a[i]:
+            temp = res[-1]
+            res[-1] = a[i]
+            a[i] = temp
+    if a[i] <= b[i]:
+        res.extend((a[i],b[i]))
+    else:
+        res.extend((b[i]))
+#print(res)
+
+
+def funs():
+    s= "aabbbbbddeeeccbda"
+    n=s
+    count = 0
+    l=[]
+    for i in range(len(s)-1):
+        a = s[count]
+        try:
+            while a==s[count]:
+                l.append(s[count])
+                count+=1
+            else:
+                if len(l)%2 == 0:
+                    n2 = ''.join(l)
+                    n = n.replace(n2,'')
+                    l=[]
+                else:
+                    l=[]
+        except:
+            print(n)
+            break
+#funs()
+
+
+
+
+
+
+
 
 
 ##############################################################################################################################
@@ -1249,8 +1295,7 @@ def animal_sound(animals):
 
 
 ##################################
-#Single Responsibility Principle
-##################################
+
 
 
 
