@@ -15,6 +15,17 @@
 #basic design pattrens for static methods
 #Threading
 ##############################################################################################################################
+#important middileware methods
+
+#called during request
+    #process_request
+    #process_view(request,vie_function,args,kwargs)
+#called during response
+    #process_exception
+    #process_template_reponse
+    #process_response
+
+##############################################################################################################################
 #HTTP status
 #200 ok
 #404 not found
