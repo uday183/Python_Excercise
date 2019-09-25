@@ -1072,7 +1072,7 @@ ll.push(3)
 ll.append(4)
 ll.append(5)
 ll.insertatnth(2,66)
-print(ll.printList())
+#print(ll.printList())
 
 ##################################################################################################################################
 
@@ -1240,13 +1240,62 @@ def funs():
             print(n)
             break
 #funs()
+def test():
+    s= "aabbbbbddeeeccbdaaa"
+    cur = s[0]
+    count=1
+    for each in s[1:]:
+        if cur == each:
+            count+=1
+        else:
+            if count%2:
+                print (cur*count,end = '')
+            cur = each
+            count =1
+    if count%2:
+        print(cur*count)
+#test()
 
 
 
 
+def test():
+    d={}
+    s = 'abba'
+    status=True
+    for i in s:
+        d[i] = d.get(i,0)+1
+    for key,value in d.items():
+        if value%2==0:
+            status = True
+        else:
+            status =False
+    print(status)
+#test()
 
+def test():
+    days = {"Mon":1,"Tue":2,"Wed":3,"Thu":4,"Fri":5,"Sat":6,"Sun":7}
+    count = 2
+    day = days.get("Mon")+2
+    counts = day%7
+    for k,v in days.items():
+        if v == counts:
+            print(k)
+#test()
 
+def test():
+    s='nitin'
+    j = len(s)-1
+    flag=True
+    for i in s:
+        if i == s[j]:
+            j-=1
+            flag =True
+        else:
+            flag = False
+    print(flag)
 
+test()
 
 
 ##############################################################################################################################
