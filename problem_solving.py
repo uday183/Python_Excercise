@@ -238,7 +238,14 @@ def test():
 
 #test()
 
-
+#input 2 
+#output [1,-1]
+#input 3
+#output [1,0,-1]
+#input 4
+#output [2,1,-1,-2]
+#input 5
+#output [2, 1, 0, -1, -2]
 def test2(n):
     if n==1:
         return [0]
@@ -247,7 +254,7 @@ def test2(n):
             return [i for i in range(n//2,0,-1)]+[-j for j in range(1,n//2+1)]
         else:
             return [i for i in range(n//2,0,-1)]+[0]+[-j for j in range(1,n//2+1)]
-#print(test2(3))
+#print(test2(5))
 
 
 
