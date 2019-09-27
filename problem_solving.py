@@ -1,5 +1,5 @@
 #programs:
-l = [12, 45, 2, 41, 31, 10, 8, 6, 4]
+l = [45,12, 2, 41, 31, 10, 8, 6, 4]
 
 h1 = l[0]
 h2 = None
@@ -9,15 +9,15 @@ for i in l[1:]:
     if i > h1:
         h2 = h1
         h1 = i
-    elif i > h2:
+    elif h2 == None or i > h2  :
         h2 = i
     if i < l1:
         l2 = l1
         l1 = i
     elif l2 == None or i < l2:
         l2 =i
-# print (l2)
-# print (h2)
+print (l2)
+print (h2)
 ################################################
 a=22
 b=33
